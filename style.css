@@ -1,0 +1,301 @@
+/* Общие стили */
+:root {
+    --primary-text-color: #1a1a1a; /* Почти черный для основного текста */
+    --secondary-text-color: #555; /* Серый для второстепенного текста */
+    --background-color: #ffffff;
+    --section-alternate-bg: #f7f7f7; /* Очень светло-серый для чередования фона секций */
+    --border-color: #e0e0e0;
+    --card-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    --link-color: #000000;
+    --link-hover-color: #444;
+    --button-bg: #1a1a1a;
+    --button-text: #ffffff;
+    --button-hover-bg: #333333;
+    --footer-bg: #1a1a1a;
+    --footer-text-color: #f0f0f0;
+    --font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.7; /* Увеличен для лучшей читаемости */
+    color: var(--primary-text-color);
+    background-color: var(--background-color);
+    font-size: 16px; /* Базовый размер шрифта */
+}
+
+.container {
+    width: 1100px; /* Фиксированная ширина контейнера */
+    max-width: 90%; /* Чтобы на очень больших экранах не растягивался слишком сильно */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.7em;
+    line-height: 1.3;
+    font-weight: 500; /* Менее жирный для заголовков */
+}
+
+h1 { font-size: 3em; color: #000; } /* Чистый черный для главного заголовка */
+h2 { font-size: 2.2em; margin-bottom: 1em; }
+h3 { font-size: 1.4em; }
+
+p {
+    margin-bottom: 1.2em;
+}
+
+/* Шапка (Header) */
+header {
+    background-color: var(--background-color);
+    padding: 1.5rem 0; /* Увеличены отступы */
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 2em; /* Крупнее лого */
+    font-weight: 700; /* Жирнее */
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
+
+.primary-navigation {
+    list-style: none;
+    display: flex;
+    gap: 2rem; /* Увеличено расстояние между пунктами */
+}
+
+.primary-navigation a {
+    color: var(--secondary-text-color);
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    position: relative;
+    font-size: 1.1em;
+}
+
+.primary-navigation a:hover {
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
+
+.primary-navigation a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px; /* Немного ниже текста */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-text-color);
+    transition: width 0.3s ease;
+}
+
+.primary-navigation a:hover::after,
+.primary-navigation a.active::after { /* Допустим, есть класс active для текущей страницы */
+    width: 100%;
+}
+
+/* Секция Hero */
+.hero {
+    background-color: var(--section-alternate-bg); /* Светло-серый фон */
+    color: var(--primary-text-color);
+    padding: 100px 0; /* Больше вертикального пространства */
+    text-align: center;
+}
+
+.hero h1 {
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.3em; /* Крупнее текст под заголовком */
+    color: var(--secondary-text-color);
+    margin-bottom: 2em;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 15px 35px; /* Крупнее кнопка */
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border: none;
+}
+
+.cta-button:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-text);
+    text-decoration: none;
+    transform: translateY(-2px); /* Небольшой эффект приподнятия */
+}
+
+/* Общие стили для контентных секций */
+.content-section {
+    padding: 80px 0;
+}
+.content-section.alternate-bg {
+    background-color: var(--section-alternate-bg);
+}
+.content-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.content-section p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; /* Или center, если нужно */
+    font-size: 1.1em;
+    color: var(--secondary-text-color);
+}
+.content-section p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Лента новостей */
+.news-feed {
+    padding: 80px 0;
+}
+
+.news-feed h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Всегда 3 колонки */
+    gap: 35px; /* Увеличен gap */
+}
+
+.news-item {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.news-item img {
+    width: 100%;
+    height: 220px; /* Фиксированная высота для единообразия */
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.news-item-content {
+    padding: 25px; /* Увеличены отступы внутри карточки */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.news-item h3 {
+    font-size: 1.3em; 
+    margin-bottom: 0.5em;
+    color: var(--primary-text-color);
+}
+
+.news-item .news-date {
+    font-size: 0.9em;
+    color: var(--secondary-text-color);
+    margin-bottom: 1em;
+}
+
+.news-item p {
+    font-size: 1em;
+    color: var(--secondary-text-color);
+    flex-grow: 1;
+    margin-bottom: 1.5em;
+}
+
+.news-item .read-more {
+    display: inline-block; 
+    align-self: flex-start;
+    font-weight: 500;
+    color: var(--primary-text-color);
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.news-item .read-more:hover {
+    background-color: var(--primary-text-color);
+    color: var(--background-color);
+    text-decoration: none;
+    border-color: var(--primary-text-color);
+}
+
+/* Подвал (Footer) */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text-color);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-links {
+    margin-top: 15px;
+}
+
+.footer-links a {
+    color: var(--footer-text-color);
+    margin: 0 15px;
+    opacity: 0.7;
+    font-size: 0.9em;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
