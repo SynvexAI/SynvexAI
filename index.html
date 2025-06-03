@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SynvexAI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+    
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">SynvexAI</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active nav-link"><span>Home</span></a></li>
+                    <li><a href="#about" class="nav-link scroll-link"><span>About Us</span></a></li>
+                    <li><a href="#news-showcase" class="nav-link scroll-link"><span>News</span></a></li>
+                    <li><a href="contacts.html" class="nav-link"><span>Contact</span></a></li>
+                </ul>
+            </nav>
+            <div class="theme-switcher">
+                <button id="theme-toggle-button" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1 class="hero-title"></h1>
+                <a href="#about" class="cta-button scroll-link" data-aos="fade-up" data-aos-delay="800">Learn More</a>
+            </div>
+        </section>
+
+        <section id="about" class="content-section about-teaser" data-aos="fade-up">
+            <div class="container">
+                <h2 class="section-title-center">About SynvexAI</h2>
+                <p data-aos="fade-up" data-aos-delay="100">We develop cutting-edge AI solutions by combining deep knowledge in neural networks and cognitive sciences with human-centered design principles. Our goal is to create products that are not only technologically advanced but also intuitive and useful for solving real-world problems.</p>
+                <a href="about-page.html" class="text-link" data-aos="fade-up" data-aos-delay="200">More about our mission and team →</a>
+            </div>
+        </section>
+
+        <section id="news-showcase" class="content-section news-showcase-section-v2">
+            <div class="container">
+                <div class="section-header" data-aos="fade-right">
+                     <h2 class="section-title">Highlights</h2>
+                     <a href="all-news.html" class="view-all-link">
+                        All news <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="news-wow-layout">
+                    <article class="news-wow-card main-story" data-aos="fade-up" data-aos-duration="900">
+                        <a href="ReMind\news1\index.html" class="news-wow-link">
+                            <div class="news-wow-image-wrapper">
+                                <img src="ReMind\banner.png" alt="banner">
+                                <div class="image-overlay"></div>
+                            </div>
+                            <div class="news-wow-content">
+                                <!-- <span class="news-wow-category main-cat">ReMind ai</span> -->
+                                <h3>ReMind</h3>
+                                <p class="news-wow-excerpt">ReMind is your personal AI assistant, designed to provide deep insight and conscious support. Whether it's ideas, tasks, or big goals, ReMind is there to help you move forward.</p>
+                                <div class="news-meta">
+                                    <span class="news-date">May 21, 2025</span>
+                                    <span class="read-more-chip">Read More <i class="fas fa-long-arrow-alt-right"></i></span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="news-wow-card secondary-story type-1" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
+                        <a href=".html" class="news-wow-link">
+                            <div class="news-wow-image-wrapper small-img">
+                                <div class="placeholder-bg-pattern pattern-1"></div>
+                            </div>
+                            <div class="news-wow-content">
+                                <span class="news-wow-category">Release</span>
+                                <h4>Introducing GDInt</h4>
+                                <div class="news-meta">
+                                    <span class="news-read-time">6 min read</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- <article class="news-wow-card secondary-story type-2" data-aos="fade-left" data-aos-delay="350" data-aos-duration="800">
+                        <a href=".html" class="news-wow-link">
+                            <div class="news-wow-content text-only">
+                                <span class="news-wow-category">span</span>
+                                <h4>h4</h4>
+                                <p class="news-wow-excerpt short">news-wow-excerpt short</p>
+                                <div class="news-meta">
+                                    <span class="news-read-time">4 min read</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article> -->
+
+                    <!-- <article class="news-wow-card secondary-story type-3" data-aos="fade-left" data-aos-delay="500" data-aos-duration="800">
+                        <a href=".html" class="news-wow-link">
+                            <div class="news-wow-image-wrapper small-img">
+                                 <div class="placeholder-bg-pattern pattern-2"></div>
+                            </div>
+                            <div class="news-wow-content">
+                                <span class="news-wow-category">Release</span>
+                                <h4>Lol</h4>
+                                <div class="news-meta">
+                                    <span class="news-read-time">11 min read</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article> -->
+                </div>
+            </div>
+        </section>
+
+        <section id="more-news" class="content-section more-news-section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-right">
+                    <h2 class="section-title">More News</h2>
+                </div>
+                <div class="horizontal-scroll-wrapper" data-aos="fade-left">
+                    <div class="standard-news-grid horizontal-scroll">
+                        <article class="news-card scroll-item" data-aos-id="horizontal-card">
+                            <a href="news-article-standard1.html" class="news-card-link-wrapper">
+                                <div class="news-card-image-wrapper">
+                                    <div class="news-card-image-placeholder secondary-image" style="background-color: var(--border-color);"></div>
+                                </div>
+                                <div class="news-card-content">
+                                    <h4>SynvexAI Research on Quantum Computing</h4>
+                                    <div class="news-meta">
+                                        <span class="news-category">Research</span>
+                                        <span class="news-read-time">8 min read</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="news-card scroll-item" data-aos-id="horizontal-card">
+                             <a href="news-article-standard2.html" class="news-card-link-wrapper">
+                                <div class="news-card-image-wrapper">
+                                    <div class="news-card-image-placeholder secondary-image" style="background-color: var(--border-color);"></div>
+                                </div>
+                                <div class="news-card-content">
+                                    <h4>Our Team at AI Dev Summit: Highlights</h4>
+                                    <div class="news-meta">
+                                        <span class="news-category">Events</span>
+                                        <span class="news-read-time">5 min read</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="news-card scroll-item" data-aos-id="horizontal-card">
+                             <a href="news-article-standard3.html" class="news-card-link-wrapper">
+                                <div class="news-card-image-wrapper">
+                                    <div class="news-card-image-placeholder secondary-image" style="background-color: var(--border-color);"></div>
+                                </div>
+                                <div class="news-card-content">
+                                    <h4>Platform Update: New Features for Devs</h4>
+                                    <div class="news-meta">
+                                        <span class="news-category">Platform</span>
+                                        <span class="news-read-time">7 min read</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                         <article class="news-card scroll-item" data-aos-id="horizontal-card">
+                             <a href="news-article-standard4.html" class="news-card-link-wrapper">
+                                <div class="news-card-image-wrapper">
+                                    <div class="news-card-image-placeholder secondary-image" style="background-color: var(--border-color);"></div>
+                                </div>
+                                <div class="news-card-content">
+                                    <h4>Ethics in AI: A Roundtable Discussion</h4>
+                                    <div class="news-meta">
+                                        <span class="news-category">Ethics</span>
+                                        <span class="news-read-time">10 min read</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="news-card scroll-item scroll-item-spacer">
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="site-footer">
+        <div class="container footer-content">
+            <div class="footer-social-links">
+                <a href="https://x.com/SynvexAI" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/@SynvexAI" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://linkedin.com/company/synvexai" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/SynvexAI" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/SynvexAI" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="http://tiktok.com/@synvexai" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://discord.gg/SynvexAI" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <span>SynvexAI <span id="copyright-years"></span></span>
+                <a href="/manage-cookies" class="manage-cookies-link">Manage Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</body>
+</html>
