@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const copyrightYearsElement = document.getElementById('copyright-years');
     if (copyrightYearsElement) {
         const currentYear = new Date().getFullYear();
-        copyrightYearsElement.textContent = `© 2015–${currentYear}`;
+        copyrightYearsElement.textContent = `© 2025–${currentYear}`;
     }
 
     
