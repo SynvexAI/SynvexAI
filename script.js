@@ -1,8 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-    
-
-    
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
         const text = "SynvexAI is a commercial organization that creates intelligent products at the intersection of neural networks, cognitive science and human-centered design.";
