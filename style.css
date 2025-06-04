@@ -468,7 +468,7 @@ nav ul li {
 .image-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(to top, var(--card-bg-color) 0%, transparent 60%);
+    background: linear-gradient(to up, var(--card-bg-color) 0%, transparent 60%);
     opacity: 0.8;
     transition: opacity 0.4s ease;
 }

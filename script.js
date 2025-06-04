@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
     backToTopButton.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-
     
     const header = document.getElementById('main-header');
     let lastScrollTop = 0;
@@ -117,4 +116,21 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollWrapper.scrollLeft += evt.deltaY > 0 ? 100 : -100;
         }, { passive: false });
     }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // отключаем после показа
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  const paragraphs = document.querySelectorAll('.about-paragraph');
+  paragraphs.forEach(p => observer.observe(p));
 });
