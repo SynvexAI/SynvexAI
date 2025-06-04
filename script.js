@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
-        const text = "Synvex is a commercial organization that creates intelligent products at the intersection of neural networks, cognitive science and human-centered design.";
+        const text = "SynvexAI is a commercial organization that creates intelligent products at the intersection of neural networks, cognitive science and human-centered design.";
         heroTitle.innerHTML = '';
         text.split('').forEach((char, index) => {
             const span = document.createElement('span');
