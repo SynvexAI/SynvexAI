@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     backToTopButton.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
     
     const header = document.getElementById('main-header');
     let lastScrollTop = 0;
