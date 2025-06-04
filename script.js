@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, 100);
     }
-
     
     AOS.init({
         duration: 700,
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
         offset: 50,
         easing: 'cubic-bezier(0.25, 0.8, 0.25, 1)',
     });
-
     
     const scrollLinks = document.querySelectorAll('a.scroll-link');
     scrollLinks.forEach(link => {
