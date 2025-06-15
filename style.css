@@ -45,6 +45,15 @@
     --hero-grid-line-color: #ffffff;
 }
 
+::selection {
+  color: var(--button-text-color);
+  background: var(--accent-color);
+}
+
+[data-theme="dark"] ::selection {
+  color: var(--button-text-color);
+  background: var(--accent-color);
+}
 
 
 html {
