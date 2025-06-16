@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
-        const text = "Synvex — коммерческая организация, которая создает интеллектуальные продукты на стыке нейронных сетей, когнитивной науки и проектирования, ориентированного на человека.";
+        const text = "SynvexAI — коммерческая организация, которая создает интеллектуальные продукты на стыке нейронных сетей, когнитивной науки и проектирования, ориентированного на человека.";
         heroTitle.innerHTML = '';
         text.split('').forEach((char, index) => {
             const span = document.createElement('span');
