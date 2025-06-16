@@ -106,9 +106,9 @@ h1.hero-title {
     font-size: clamp(2.5em, 6vw, 4.2em);
     line-height: 1.2;
     font-weight: var(--font-weight-black);
-    margin-bottom: 0.85em;
+    margin-bottom: 1em;
     text-align: center;
-    max-width: 1200px;
+    max-width: 1500px;
     margin-left: auto;
     margin-right: auto;
 }
