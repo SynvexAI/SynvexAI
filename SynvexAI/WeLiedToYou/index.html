@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="ru" data-theme="dark">
 <head>
     <link rel="icon" href="../../icon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Through Mistakes: An Honest Story from SynvexAI</title>
+    <title>Обучение на ошибках: честная история от SynvexAI</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="../../style.css">
@@ -18,7 +18,7 @@
                 <a href="../../index.html">SynvexAI</a>
             </div>
             <div class="theme-switcher">
-                <button id="theme-toggle-button" aria-label="Toggle theme">
+                <button id="theme-toggle-button" aria-label="Переключить тему">
                     <i class="fas fa-moon"></i>
                 </button>
             </div>
@@ -28,34 +28,34 @@
     <main style="padding-top: 100px;">
         <div class="container">
             <header class="article-header" style="text-align: center; margin-bottom: 50px; padding-top: 30px;">
-                <h1 style="font-size: clamp(2em, 5vw, 3.5em); font-weight: var(--font-weight-extrabold); margin-bottom: 0.3em;">Learning Through Mistakes: An Honest Story from SynvexAI</h1>
+                <h1 style="font-size: clamp(2em, 5vw, 3.5em); font-weight: var(--font-weight-extrabold); margin-bottom: 0.3em;">Обучение на ошибках: честная история от SynvexAI</h1>
             </header>
 
             <article class="article-content">
                 <section style="margin-bottom: 40px;">
-                    <h2 style="font-size: clamp(1.6em, 3.5vw, 2.2em); margin-bottom: 20px; font-weight: var(--font-weight-bold);">An Honest Confession</h2> 
-                    <p>Hi, we're the SynvexAI team! And today, we want to talk to you frankly. Our first models (like Mind-2) weren't entirely "ours": we took existing solutions—GPT-2 from OpenAI, Gemma-3B from DeepMind, GLaM, and others—and slightly modified them. Roughly speaking, we did a bit of "tinkering" with others' brains: we changed system prompts, inserted our own communication templates, and sometimes literally delved into the model's "mind" to make it think it was speaking on our behalf. We put our stamp on them—pure fantasy.</p> <!-- Translated -->
-                    <p>At the same time, we understand: this was a compromised and, let's be honest, not entirely ethical path. We must publicly apologize. We're sorry, OpenAI, Google DeepMind, and all the original model creators—we overstepped the boundaries. We were young, naive, and tried to "beef up" our ideas by any means necessary. We understand now that we don't do that anymore. This experience was a bitter lesson for us.</p> <!-- Translated -->
+                    <h2 style="font-size: clamp(1.6em, 3.5vw, 2.2em); margin-bottom: 20px; font-weight: var(--font-weight-bold);">Честное признание</h2> 
+                    <p>Привет, мы команда SynvexAI! И сегодня хотим поговорить с вами откровенно. Наши первые модели (такие как Mind-2) были не совсем «нашими»: мы брали существующие решения — GPT-2 от OpenAI, Gemma-3B от DeepMind, GLaM и другие — и немного их модифицировали. Грубо говоря, «колдовали» над чужими мозгами: меняли системные подсказки, вставляли свои шаблоны общения и даже пытались заставить модель «думать», что она говорит от нашего имени. Мы ставили на них наш штамп — чистая фантазия.</p>
+                    <p>При этом мы понимаем: путь был компромиссным и, откровенно, не совсем этичным. Мы должны извиниться публично. Простите нас, OpenAI, Google DeepMind и все авторы оригинальных моделей — мы перешли границы. Мы были молоды, наивны и пытались «усилить» свои идеи любой ценой. Теперь мы это осознали. Больше так не делаем. Этот опыт стал для нас горьким уроком.</p>
                 </section>
 
                 <section style="margin-bottom: 40px;">
-                    <h2 style="font-size: clamp(1.6em, 3.5vw, 2.2em); margin-bottom: 20px; font-weight: var(--font-weight-bold);">The Story of One Hack</h2>
-                    <p>Now, a few words about a specific case where we caught ourselves red-handed. We had an experiment—Mind-3. We took the mind3.gguf model, based on Gemma-3B, and decided to modify it in a slightly cunning way. The task was simple: make the model think it was an original SynvexAI development. That is, to change the "communication template"—for example, to make it start a dialogue with something like "Hello! I'm Mind-3 from SynvexAI and I'm ready to help."</p> <!-- Translated -->
-                    <p>Picture this: we launch the model, and instead of the usual "Hello, I'm Gemma," it starts with "Hello, I'm SynvexAI Mind-3." But then the fun began. Scripts for converting the old GGUF format didn't want to work; the API we tried to update was outdated; and PowerShell just threw errors every time we changed lines in the code. We managed to smoke a ton of nervous cigarettes and even "cursed atata" at our computers a few times.</p> <!-- Translated -->
-                    <p>Finally, we decided to use the <code>convert_hf_to_gguf_update.py</code> utility—and lo and behold, it worked! A Python-wrapped deus ex machina. We were relieved to find that the model's weights (i.e., its entire "learned part," its knowledge) were untouched—we only changed the communication template and system settings. Technically, our "brain-swapping" maneuver happened locally, on our own computers, without involving clouds or prying eyes.</p> <!-- Translated -->
+                    <h2 style="font-size: clamp(1.6em, 3.5vw, 2.2em); margin-bottom: 20px; font-weight: var(--font-weight-bold);">История одного хака</h2>
+                    <p>Теперь немного о конкретном случае, когда мы поймали себя за руку. Был у нас эксперимент — Mind-3. Мы взяли модель mind3.gguf на базе Gemma-3B и решили модифицировать её немного хитрым способом. Задача была простая: заставить модель думать, что она — оригинальная разработка SynvexAI. То есть изменить «шаблон общения» — например, чтобы она начинала диалог с «Привет! Я Mind-3 от SynvexAI и готов помочь.»</p>
+                    <p>Представьте: запускаем модель, и вместо привычного «Привет, я Gemma» она говорит: «Привет, я SynvexAI Mind-3». А дальше началось веселье. Скрипты конверсии старого формата GGUF отказывались работать; API, который мы пытались обновить, был устаревшим; а PowerShell просто сыпал ошибками при любом изменении кода. Мы выкурили кучу нервных сигарет и даже пару раз «прокляли атата» наши компьютеры.</p>
+                    <p>В конце концов мы решили использовать утилиту <code>convert_hf_to_gguf_update.py</code> — и, о чудо, она сработала! Обёртка на Python как deus ex machina. Мы с облегчением поняли, что веса модели (то есть её обученная часть, её знания) остались нетронутыми — мы меняли только шаблон общения и системные настройки. Технически наш «обмен мозгами» происходил локально, на наших машинах, без облаков и посторонних глаз.</p>
                 </section>
 
                 <section style="margin-bottom: 40px;">
-                    <h2 style="font-size: clamp(1.6em, 3.5vw, 2.2em); margin-bottom: 20px; font-weight: var(--font-weight-bold);">Transitioning to Our Own</h2>
-                    <p>But things took a very different turn after that. We drew conclusions and decided to focus on our own developments. We are currently working on Mind-4—our fully proprietary neural network. Imagine: our own dataset (a collection of texts for training), our own tokenizer (an algorithm that breaks text into words and parts), even the architecture—we are designing everything ourselves, like artists on a blank canvas. The first training is conceived from scratch: we're not "weaving any spells" with GPT components here. We collect and clean data, write code, experiment with settings—and all this is long, painstaking, and fascinating.</p> <!-- Translated -->
-                    <p>According to our plans, the launch of Mind-4 is scheduled for summer. This is a crucial step: no more "behind-the-scenes tricks" or deception. Only the honest way. We are focusing on our own vision and our own work. And you will see it when the model is released.</p> <!-- Translated -->
+                    <h2 style="font-size: clamp(1.6em, 3.5vw, 2.2em); margin-bottom: 20px; font-weight: var(--font-weight-bold);">Переход к своему</h2>
+                    <p>Но после этого всё пошло по-другому. Мы сделали выводы и решили сосредоточиться на собственных разработках. Сейчас мы работаем над Mind-4 — нашей полностью оригинальной нейросетью. Представьте: собственный датасет (набор текстов для обучения), собственный токенизатор (алгоритм, разбивающий текст на слова и части), даже архитектура — всё проектируем сами, как художники с чистого холста. Первое обучение — с нуля: здесь нет никакой магии с компонентами GPT. Мы собираем и очищаем данные, пишем код, экспериментируем с настройками — и всё это долго, кропотливо и увлекательно.</p>
+                    <p>Согласно планам, запуск Mind-4 намечен на лето. Это решающий шаг: больше никаких «закулисных фокусов» и обмана. Только честный путь. Мы сосредоточены на своём видении и своей работе. И вы это увидите, когда модель выйдет.</p>
                 </section>
 
                 <section style="margin-bottom: 40px;">
-                    <h2 style="font-size: clamp(1.6em, 3.5vw, 2.2em); margin-bottom: 20px; font-weight: var(--font-weight-bold);">On a Personal Note</h2>
-                    <p>Honestly, all these adventures are also about us, as people. The path was not easy. We didn't have super-cool servers with expensive video cards; we worked with what we had: a few old computers and a huge desire. We had to learn tons of new (and sometimes incomprehensible) material on the fly. Plus, thoughts about upcoming exams were racing in our heads—it's quite something when your thesis defense is on par with ChatGPT.</p> <!-- Translated -->
-                    <p>We learned bit by bit: we tried different things, made naive attempts, sometimes patched up "holes" in our knowledge. Like many beginners, we sometimes fumbled with our words and, stumbling, moved forward. But it was precisely through such mistakes that we grew professionally and personally. Now we are ready for new heights—and this feeling of joy is beyond words.</p> <!-- Translated -->
-                    <p>Thank you for staying with us—we promise it will only get more interesting from here!</p>
+                    <h2 style="font-size: clamp(1.6em, 3.5vw, 2.2em); margin-bottom: 20px; font-weight: var(--font-weight-bold);">Лично от нас</h2>
+                    <p>Если честно, все эти приключения — это и о нас, как о людях. Путь был не из лёгких. У нас не было суперсерверов с дорогими видеокартами; мы работали с тем, что было: несколько стареньких компьютеров и огромное желание. Мы на лету изучали кучу новой (и часто непонятной) информации. Плюс — мысли об экзаменах — не каждый день защита диплома идёт вровень с ChatGPT.</p>
+                    <p>Мы учились понемногу: пробовали разное, делали наивные попытки, иногда латали «дыры» в знаниях. Как и многие новички, мы порой путались в формулировках и, спотыкаясь, двигались вперёд. Но именно через такие ошибки мы росли — профессионально и лично. Теперь мы готовы к новым вершинам — и это чувство радости не передать словами.</p>
+                    <p>Спасибо, что остаетесь с нами — обещаем, дальше будет только интереснее!</p>
                 </section>
             </article>
         </div>
@@ -74,12 +74,12 @@
             </div>
             <div class="footer-copyright">
                 <span>SynvexAI <span id="copyright-years"></span></span>
-                <a href="../../manage-cookies" class="manage-cookies-link">Manage Cookies</a>
+                <a href="../../manage-cookies" class="manage-cookies-link">Управление файлами cookie</a>
             </div>
         </div>
     </footer>
 
-    <button id="back-to-top" title="Back to top">
+    <button id="back-to-top" title="Наверх">
         <i class="fas fa-arrow-up"></i>
     </button>
     <script src="../../script.js"></script>
