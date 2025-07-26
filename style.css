@@ -1,5 +1,4 @@
 :root {
-   
     --font-family-main: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --font-weight-light: 300;
     --font-weight-regular: 400;
@@ -103,7 +102,7 @@ h1, h2, h3, h4 {
 }
 
 h1.hero-title {
-    font-size: clamp(2.5em, 6vw, 4.2em);
+    font-size: clamp(2em, 5vw, 4em);
     line-height: 1.2;
     font-weight: var(--font-weight-black);
     margin-bottom: 1em;
@@ -153,34 +152,49 @@ p {
     font-size: 1.05em;
 }
 
-
-
 #main-header {
-    background-color: var(--header-bg);
-    border-bottom: 1px solid var(--border-color);
-    padding: 15px 0;
+    height: 55px;   
+    padding: 0 20px;
+
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px) saturate(200%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1280px;
+    border-radius: 9999px;
     z-index: 1000;
-    backdrop-filter: blur(16px) saturate(180%);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    will-change: transform;
-}
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
 
-#main-header.scrolled {
-    box-shadow: var(--header-shadow);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
 }
 
 #main-header .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: nowrap;
 }
 
-.logo a {
+#main-header .right-side {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+#main-header .logo a {
     font-size: 1.8em;
     font-weight: var(--font-weight-black);
     color: var(--text-color);
@@ -194,9 +208,22 @@ nav ul {
     display: flex;
 }
 
-nav ul li {
-    margin-left: 20px;
+.nav-link {
+    padding: 6px 12px;  
+    line-height: 1;     
 }
+
+#main-header.scrolled {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transform: translateX(-50%) translateY(-10px) scale(0.8);
+}
+
+[data-theme="dark"] #main-header {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
 
 .nav-link {
     font-size: 1em;
