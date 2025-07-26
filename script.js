@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
-        const text = "SynvexAI — коммерческая организация, которая создает интеллектуальные продукты на стыке нейронных сетей, когнитивной науки и проектирования, ориентированного на человека.";
+        const text = "Мы создаём искусственный интеллект, чтобы технологии лучше работали для человека.";
         heroTitle.innerHTML = '';
         text.split('').forEach((char, index) => {
             const span = document.createElement('span');
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // отключаем после показа
+        observer.unobserve(entry.target);
       }
     });
   }, {

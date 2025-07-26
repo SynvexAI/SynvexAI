@@ -8,10 +8,9 @@
     --font-weight-extrabold: 800;
     --font-weight-black: 900;
 
-   
-    --bg-color: #FFFFFF;              
-    --text-color: #000000;            
-    --secondary-text-color: #4A4A4A;  
+    --bg-color: #FFFFFF;
+    --text-color: #000000;
+    --secondary-text-color: #4A4A4A;
     --accent-color: #000000;          
     --border-color: #EAEAEA;          
     --card-bg-color: #FFFFFF;         
@@ -102,12 +101,11 @@ h1, h2, h3, h4 {
 }
 
 h1.hero-title {
-    font-size: clamp(2em, 5vw, 4em);
+    font-size: 85px !important;
     line-height: 1.2;
     font-weight: var(--font-weight-black);
-    margin-bottom: 1em;
     text-align: center;
-    max-width: 1500px;
+    max-width: 1800px;
     margin-left: auto;
     margin-right: auto;
 }
