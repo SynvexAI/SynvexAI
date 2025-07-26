@@ -13,6 +13,10 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <!-- Новый кастомный курсор -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
     <header id="main-header">
         <div class="container">
             <div class="logo">
@@ -38,12 +42,12 @@
         <section class="hero">
             <div class="container hero-content">
                 <h1 class="hero-title"></h1>
-                <a href="#about" class="cta-button scroll-link" data-aos="fade-up" data-aos-delay="800">Узнать больше</a>
+                <a href="#about" class="cta-button scroll-link" data-aos="fade-up" data-aos-delay="1200">Узнать больше</a>
             </div>
         </section>
 
-        <section id="about" class="content-section about-teaser" data-aos="fade-up">
-        <div class="container">
+        <section id="about" class="content-section about-teaser">
+        <div class="container" data-aos="fade-up">
             <h2 class="section-title-center">О SynvexAI</h2>
 
             <p data-aos="fade-up" data-aos-delay="100">
@@ -77,7 +81,7 @@
                     </a>
                 </div>
                 <div class="news-wow-layout">
-                    <article class="news-wow-card main-story" data-aos="fade-up" data-aos-duration="900">
+                    <article class="news-wow-card main-story" data-aos="zoom-in-up" data-aos-duration="900">
                         <a href="https://chat.remind.ai/" class="news-wow-link">
                             <div class="news-wow-image-wrapper">
                                 <img src="ReMind\banner.png" alt="баннер">
@@ -95,7 +99,8 @@
                     </article>
 
                     <article class="news-wow-card secondary-story type-1" data-aos="fade-left" data-aos-delay="200" data-aos-duration="800">
-                        <a href=".html" class="news-wow-link">
+                        <!-- Ссылка исправлена на # -->
+                        <a href="#" class="news-wow-link"> 
                             <div class="news-wow-image-wrapper small-img">
                                 <div class="placeholder-bg-pattern pattern-1"></div>
                             </div>
@@ -130,40 +135,44 @@
                 <div class="section-header" data-aos="fade-right">
                     <h2 class="section-title">Другие новости</h2>
                 </div>
-                <div class="horizontal-scroll-wrapper" data-aos="fade-left">
-                    <div class="standard-news-grid horizontal-scroll">
+                <!-- Обертка для AOS, чтобы анимация сработала один раз для всей секции -->
+                <div data-aos="fade-up">
+                    <div class="horizontal-scroll-wrapper">
+                        <div class="standard-news-grid horizontal-scroll">
 
-                        <article class="news-card scroll-item" data-aos-id="horizontal-card">
-                             <a href="Terms&Policies\privacy.html" class="news-card-link-wrapper">
-                                <div class="news-card-image-wrapper">
-                                    <div class="news-card-image-placeholder secondary-image" style="background-image: url('SynvexAI/news2/banner1.png'); background-size: cover; background-position: center;"></div>
-                                </div>
-                                <div class="news-card-content">
-                                    <h4>Политика конфиденциальности</h4>
-                                    <div class="news-meta">
-                                        <span class="news-category">SynvexAI</span>
-                                        <span class="news-read-time">3 минуты чтения</span>
+                            <!-- Добавлены data-aos-delay для ступенчатой анимации -->
+                            <article class="news-card scroll-item" data-aos="zoom-in" data-aos-delay="100">
+                                 <a href="Terms&Policies\privacy.html" class="news-card-link-wrapper">
+                                    <div class="news-card-image-wrapper">
+                                        <div class="news-card-image-placeholder secondary-image" style="background-image: url('SynvexAI/news2/banner1.png'); background-size: cover; background-position: center;"></div>
                                     </div>
-                                </div>
-                            </a>
-                        </article>
+                                    <div class="news-card-content">
+                                        <h4>Политика конфиденциальности</h4>
+                                        <div class="news-meta">
+                                            <span class="news-category">SynvexAI</span>
+                                            <span class="news-read-time">3 минуты чтения</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
 
-                        <article class="news-card scroll-item" data-aos-id="horizontal-card">
-                            <a href="https://synvexai.github.io/SynvexAI/" class="news-card-link-wrapper">
-                                <div class="news-card-image-wrapper">
-                                <div class="news-card-image-placeholder secondary-image" style="background-image: url('SynvexAI/news1/banner1.png'); background-size: cover; background-position: center;"></div>
-                                </div>
-                                <div class="news-card-content">
-                                    <h4>Мы создали собственный сайт</h4>
-                                    <div class="news-meta">
-                                        <span class="news-category">SynvexAI</span>
-                                        <span class="news-read-time">8 минут чтения</span>
+                            <article class="news-card scroll-item" data-aos="zoom-in" data-aos-delay="200">
+                                <a href="https://synvexai.github.io/SynvexAI/" class="news-card-link-wrapper">
+                                    <div class="news-card-image-wrapper">
+                                    <div class="news-card-image-placeholder secondary-image" style="background-image: url('SynvexAI/news1/banner1.png'); background-size: cover; background-position: center;"></div>
                                     </div>
-                                </div>
-                            </a>
-                        </article>
-                        <article class="news-card scroll-item scroll-item-spacer">
-                        </article>
+                                    <div class="news-card-content">
+                                        <h4>Мы создали собственный сайт</h4>
+                                        <div class="news-meta">
+                                            <span class="news-category">SynvexAI</span>
+                                            <span class="news-read-time">8 минут чтения</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                            <article class="news-card scroll-item scroll-item-spacer">
+                            </article>
+                        </div>
                     </div>
                 </div>
             </div>
