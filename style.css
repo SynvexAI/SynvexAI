@@ -101,13 +101,14 @@ h1, h2, h3, h4 {
 }
 
 h1.hero-title {
-    font-size: 85px !important;
+    font-size: 85px;
     line-height: 1.2;
     font-weight: var(--font-weight-black);
     text-align: center;
     max-width: 1800px;
     margin-left: auto;
     margin-right: auto;
+    word-break: break-word;
 }
 
 
@@ -874,7 +875,7 @@ nav ul {
     }
 
     h1.hero-title {
-        font-size: 60px !important;
+        font-size: 60px;
     }
 }
 
@@ -923,7 +924,7 @@ nav ul {
     }
 
     h1.hero-title {
-        font-size: 42px !important;
+        font-size: 42px;
         line-height: 1.25;
     }
 
@@ -964,7 +965,7 @@ nav ul {
 
 @media (max-width: 480px) {
     h1.hero-title {
-        font-size: 36px !important;
+        font-size: 36px;
     }
 
     .nav-link {
@@ -983,4 +984,3 @@ nav ul {
         padding: 25px;
     }
 }
-

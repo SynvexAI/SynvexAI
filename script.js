@@ -3,13 +3,26 @@ document.addEventListener('DOMContentLoaded', function() {
     if (heroTitle) {
         const text = "Мы создаём искусственный интеллект, чтобы технологии лучше работали для человека.";
         heroTitle.innerHTML = '';
-        text.split('').forEach((char, index) => {
-            const span = document.createElement('span');
-            span.classList.add('char');
-            span.textContent = char === ' ' ? '\u00A0' : char;
-            span.style.transitionDelay = `${index * 0.02}s`;
-            heroTitle.appendChild(span);
+        let charIndex = 0;
+
+        text.split(' ').forEach(word => {
+            const wordWrapper = document.createElement('span');
+            wordWrapper.className = 'word-wrapper';
+            wordWrapper.style.display = 'inline-block';
+
+            word.split('').forEach(char => {
+                const span = document.createElement('span');
+                span.classList.add('char');
+                span.textContent = char;
+                span.style.transitionDelay = `${charIndex * 0.02}s`;
+                wordWrapper.appendChild(span);
+                charIndex++;
+            });
+
+            heroTitle.appendChild(wordWrapper);
+            heroTitle.appendChild(document.createTextNode(' '));
         });
+
         setTimeout(() => {
             heroTitle.querySelectorAll('.char').forEach(charSpan => {
                 charSpan.style.opacity = '1';
@@ -40,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    
     const backToTopButton = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 400) {
@@ -65,7 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    
     const header = document.getElementById('main-header');
     let lastScrollTop = 0;
     window.addEventListener('scroll', () => {
@@ -78,7 +89,6 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     }, false);
 
-    
     const themeToggleButton = document.getElementById('theme-toggle-button');
     const htmlElement = document.documentElement;
     const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -101,14 +111,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    
     const copyrightYearsElement = document.getElementById('copyright-years');
     if (copyrightYearsElement) {
         const currentYear = new Date().getFullYear();
         copyrightYearsElement.textContent = `© 2025–${currentYear}`;
     }
 
-    
     const scrollWrapper = document.querySelector('.horizontal-scroll-wrapper');
     if (scrollWrapper) {
         scrollWrapper.addEventListener('wheel', (evt) => {
