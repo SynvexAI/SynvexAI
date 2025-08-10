@@ -54,67 +54,72 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const backToTopButton = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 400) {
-            if (!backToTopButton.style.display || backToTopButton.style.display === 'none') {
-                backToTopButton.style.display = 'flex';
-                backToTopButton.style.opacity = '0';
-                backToTopButton.style.transform = 'translateY(20px)';
-                setTimeout(() => {
-                    backToTopButton.style.opacity = '1';
-                    backToTopButton.style.transform = 'translateY(0)';
-                }, 10);
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 400) {
+                if (!backToTopButton.style.display || backToTopButton.style.display === 'none') {
+                    backToTopButton.style.display = 'flex';
+                    backToTopButton.style.opacity = '0';
+                    backToTopButton.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        backToTopButton.style.opacity = '1';
+                        backToTopButton.style.transform = 'translateY(0)';
+                    }, 10);
+                }
+            } else {
+                if (backToTopButton.style.display === 'flex') {
+                    backToTopButton.style.opacity = '0';
+                    backToTopButton.style.transform = 'translateY(20px)';
+                    setTimeout(() => backToTopButton.style.display = 'none', 300);
+                }
             }
-        } else {
-            if (backToTopButton.style.display === 'flex') {
-                backToTopButton.style.opacity = '0';
-                backToTopButton.style.transform = 'translateY(20px)';
-                setTimeout(() => backToTopButton.style.display = 'none', 300);
-            }
-        }
-    });
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 
     const header = document.getElementById('main-header');
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', () => {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    }, false);
+    if (header) {
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        }, false);
+    }
 
     const themeToggleButton = document.getElementById('theme-toggle-button');
-    const htmlElement = document.documentElement;
-    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    htmlElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
+    if (themeToggleButton) {
+        const htmlElement = document.documentElement;
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        htmlElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
 
-    themeToggleButton.addEventListener('click', () => {
-        let newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        htmlElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-    });
+        themeToggleButton.addEventListener('click', () => {
+            let newTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
 
-    function updateThemeIcon(theme) {
-        const icon = themeToggleButton.querySelector('i');
-        if (theme === 'dark') {
-            icon.classList.remove('fa-moon'); icon.classList.add('fa-sun');
-        } else {
-            icon.classList.remove('fa-sun'); icon.classList.add('fa-moon');
+        function updateThemeIcon(theme) {
+            const icon = themeToggleButton.querySelector('i');
+            if (theme === 'dark') {
+                icon.classList.remove('fa-moon'); icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun'); icon.classList.add('fa-moon');
+            }
         }
     }
 
     const copyrightYearsElement = document.getElementById('copyright-years');
     if (copyrightYearsElement) {
-        const currentYear = new Date().getFullYear();
-        copyrightYearsElement.textContent = `© 2025–${currentYear}`;
+        copyrightYearsElement.textContent = new Date().getFullYear();
     }
 
     const scrollWrapper = document.querySelector('.horizontal-scroll-wrapper');
@@ -125,21 +130,18 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollWrapper.scrollLeft += evt.deltaY > 0 ? 100 : -100;
         }, { passive: false });
     }
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+    }, {
+        threshold: 0.1
     });
-  }, {
-    threshold: 0.1
-  });
 
-  const paragraphs = document.querySelectorAll('.about-paragraph');
-  paragraphs.forEach(p => observer.observe(p));
+    const paragraphs = document.querySelectorAll('.about-paragraph');
+    paragraphs.forEach(p => observer.observe(p));
 });
