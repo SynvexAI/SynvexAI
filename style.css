@@ -808,7 +808,7 @@ nav ul {
     color: var(--text-color);
 }
 
-/* --- УЛУЧШЕННЫЕ СТИЛИ ДЛЯ ВТОРОСТЕПЕННЫХ НОВОСТЕЙ --- */
+
 
 #secondary-news {
     background-color: var(--subtle-bg-color);
@@ -839,7 +839,7 @@ nav ul {
     box-shadow: var(--card-hover-shadow);
 }
 
-/* Градиент-оверлей для читаемости текста на картинке */
+
 .news-tile-v2::before {
     content: '';
     position: absolute;
@@ -851,7 +851,7 @@ nav ul {
     transition: background-color 0.5s ease;
 }
 
-/* При наведении оверлей становится сплошным цветом фона карточки */
+
 .news-tile-v2:hover::before {
     background-color: var(--card-bg-color);
 }
@@ -864,12 +864,12 @@ nav ul {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Ключевое свойство: прижимает контент к низу */
+    justify-content: flex-end; 
     transition: justify-content 0.5s cubic-bezier(0.7, 0, 0.2, 1);
 }
 
 .news-tile-v2:hover .tile-content-wrapper {
-    justify-content: space-between; /* При наведении растягивает контент */
+    justify-content: space-between; 
 }
 
 .tile-header h3 {
@@ -888,18 +888,18 @@ nav ul {
 }
 
 .tile-body {
-    /* Скрываем тело карточки по умолчанию */
+    
     opacity: 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s cubic-bezier(0.7, 0, 0.2, 1), 
-                opacity 0.4s ease 0.2s; /* Задержка для плавного появления */
+                opacity 0.4s ease 0.2s; 
 }
 
 .news-tile-v2:hover .tile-body {
-    /* Показываем при наведении */
+    
     opacity: 1;
-    max-height: 50%; /* Достаточно места для контента */
+    max-height: 50%; 
 }
 
 .tile-body .news-date {
@@ -946,6 +946,28 @@ nav ul {
     border: 1px solid var(--border-color);
     box-shadow: var(--card-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+* {
+    scrollbar-width: thin; 
+    scrollbar-color: var(--accent-color) var(--subtle-bg-color);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;             
+  height: 10px;            
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--subtle-bg-color);
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color); 
+  border-radius: 8px;
+  border: 2px solid var(--subtle-bg-color);
+  transition: background 0.3s;
 }
 
 .screenshots-grid img:hover {
