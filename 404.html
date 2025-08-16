@@ -1,164 +1,240 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Страница не найдена</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <title>404 - Страница не найдена | SynvexAI</title>
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+    
     <style>
-        body {
-            background-color: #0a0a0a;
-            color: #e0e0e0;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 300;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+        .error-container {
+            max-width: 800px;
+            width: 100%;
             text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-            overflow: hidden;
-        }
-
-        .container {
-            max-width: 700px;
-            animation: fadeIn 1.5s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            padding-top: 2rem;
         }
 
         .error-code {
-            font-family: 'Lora', serif;
-            font-size: clamp(6rem, 25vw, 15rem);
-            font-weight: 700;
-            color: #ffffff;
+            font-size: clamp(8rem, 25vw, 20rem);
+            font-weight: var(--font-weight-black);
+            color: var(--text-color);
             margin: 0;
             line-height: 1;
             position: relative;
-            text-shadow: 
-                0 0 5px rgba(255,255,255,0.1),
-                0 0 10px rgba(255,255,255,0.1);
+            overflow: hidden;
+            animation: errorGlow 3s ease-in-out infinite alternate;
         }
 
-        .glitch-wrapper {
-            position: relative;
-            margin-bottom: 20px;
+        @keyframes errorGlow {
+            0% { 
+                text-shadow: 
+                    0 0 20px rgba(255,255,255,0.1),
+                    0 0 40px rgba(255,255,255,0.1);
+            }
+            100% { 
+                text-shadow: 
+                    0 0 30px rgba(255,255,255,0.2),
+                    0 0 60px rgba(255,255,255,0.2);
+            }
         }
 
-        .error-code::before,
-        .error-code::after {
-            content: attr(data-text);
+        .error-code::before {
+            content: "404";
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: #0a0a0a;
-            overflow: hidden;
+            background: linear-gradient(45deg, transparent 30%, var(--accent-color) 50%, transparent 70%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s ease-in-out infinite;
+            opacity: 0.3;
         }
 
-        .error-code::before {
-            left: 2px;
-            text-shadow: -1px 0 #ff0000;
-            animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
         }
 
-        .error-code::after {
-            left: -2px;
-            text-shadow: -1px 0 #0011ff;
-            animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
+        .error-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: var(--font-weight-bold);
+            color: var(--text-color);
+            margin: 1.5rem 0 1rem;
         }
 
-        @keyframes glitch-anim-1 {
-            0% { clip-path: inset(10% 0 80% 0); }
-            20% { clip-path: inset(50% 0 10% 0); }
-            40% { clip-path: inset(25% 0 55% 0); }
-            60% { clip-path: inset(80% 0 5% 0); }
-            80% { clip-path: inset(40% 0 30% 0); }
-            100% { clip-path: inset(65% 0 20% 0); }
-        }
-
-        @keyframes glitch-anim-2 {
-            0% { clip-path: inset(70% 0 15% 0); }
-            20% { clip-path: inset(5% 0 60% 0); }
-            40% { clip-path: inset(45% 0 35% 0); }
-            60% { clip-path: inset(90% 0 2% 0); }
-            80% { clip-path: inset(10% 0 70% 0); }
-            100% { clip-path: inset(55% 0 25% 0); }
-        }
-
-
-        .title {
-            font-family: 'Lora', serif;
-            font-size: clamp(1.5rem, 5vw, 2.5rem);
-            color: #f5f5f5;
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .description {
-            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-            line-height: 1.7;
-            color: #b0b0b0;
-            margin-bottom: 35px;
-            max-width: 500px;
+        .error-description {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            color: var(--secondary-text-color);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .home-button {
-            display: inline-block;
-            padding: 12px 30px;
-            border: 1px solid #c0c0c0;
-            color: #e0e0e0;
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .error-actions .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border: 2px solid var(--accent-color);
+            background: var(--accent-color);
+            color: var(--button-text-color);
             text-decoration: none;
-            font-weight: 400;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-            border-radius: 3px;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            font-weight: var(--font-weight-semibold);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            cursor: pointer;
         }
 
-        .home-button:hover {
-            background-color: #f0f0f0;
-            color: #0a0a0a;
-            border-color: #f0f0f0;
+        .error-actions .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
-        .decorative-line {
-            width: 50px;
-            height: 1px;
-            background-color: #444;
-            margin: 40px auto;
+        .error-actions .btn-secondary {
+            background: transparent;
+            color: var(--text-color);
+            border-color: var(--border-color);
         }
 
-        .whisper {
-            font-size: 0.85rem;
-            color: #777;
-            font-style: italic;
+        .error-actions .btn-secondary:hover {
+            background: var(--subtle-bg-color);
+            border-color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .error-actions .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="glitch-wrapper">
-            <div class="error-code" data-text="404">404</div>
+    <div class="grid-background"></div>
+
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">SynvexAI</a>
+            </div>
+            <div class="right-side">
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="nav-link"><span>Главная</span></a></li>
+                        <li><a href="index.html#about" class="nav-link"><span>О нас</span></a></li>
+                        <li><a href="index.html#news-showcase" class="nav-link"><span>Новости</span></a></li>
+                    </ul>
+                </nav>
+                <div class="theme-switcher">
+                    <button id="theme-toggle-button" aria-label="Переключить тему">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <h1 class="title">Page not found</h1>
-        <p class="description">
-            The page may have been removed, moved, or you may have entered an incorrect address.
-        </p>
-        <a href="index.html" class="home-button">Back to home</a>
-        <div class="decorative-line"></div>
-        <p class="whisper">If anything — we're always here.</p>
-    </div>
+    </header>
+
+    <main style="padding-top: 120px; min-height: calc(100vh - 120px); display: flex; align-items: center; justify-content: center;">
+        <div class="error-container">
+            <div class="error-code" data-aos="zoom-in" data-aos-duration="1000">404</div>
+            
+            <h1 class="error-title" data-aos="fade-up" data-aos-delay="300">
+                Страница не найдена
+            </h1>
+            
+            <p class="error-description" data-aos="fade-up" data-aos-delay="500">
+                Похоже, что страница, которую вы ищете, была перемещена, удалена или никогда не существовала. 
+                Но не волнуйтесь — даже ИИ иногда теряется в лабиринте интернета!
+            </p>
+            
+            <div class="error-actions" data-aos="fade-up" data-aos-delay="700">
+                <a href="index.html" class="btn">
+                    <i class="fas fa-home"></i>
+                    Вернуться на главную
+                </a>
+                <button class="btn btn-secondary" onclick="goBack()">
+                    <i class="fas fa-arrow-left"></i>
+                    Назад
+                </button>
+            </div>
+            
+            <div class="error-actions" data-aos="fade-up" data-aos-delay="900">
+                <a href="SynvexAI/news/" class="btn btn-secondary">
+                    <i class="fas fa-newspaper"></i>
+                    Посмотреть новости
+                </a>
+                <a href="https://chat.remind.ai/" class="btn btn-secondary">
+                    <i class="fas fa-robot"></i>
+                    Попробовать ReMind
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer id="site-footer">
+        <div class="container footer-content">
+            <div class="footer-social-links">
+                <a href="https://x.com/SynvexAI" target="_blank" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.youtube.com/@SynvexAI" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://linkedin.com/company/synvexai" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/SynvexAI" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/SynvexAI" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="http://tiktok.com/@synvexai" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://discord.gg/pxdFazEPSf" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <span>SynvexAI <span id="copyright-years"></span></span>
+                <a href="" class="manage-cookies-link">Управление cookie</a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = 'index.html';
+            }
+        }
+
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true
+        });
+    </script>
 </body>
 </html>
